@@ -40,5 +40,5 @@ jobs:
       with:
         arguments: publish
       env:
-        USERNAME: ${{ secrets.REPSY_USER }}
-        PASSWORD: ${{ secrets.REPSY_PASS }}
+        REPSY_USER: ${{ secrets.REPSY_USER }}
+        REPSY_PASS: ${{ secrets.REPSY_PASS }}
