@@ -1,0 +1,55 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'com.lilydev'
+version project.project_version
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: "${project.sl4j_version}"
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "${project.jackson_version}"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${project.jackson_version}"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "${project.jackson_version}"
+}
+
+shadowJar {
+    dependencies {
+        exclude(dependency("org.slf4j:slf4j-log4j12:${project.sl4j_version}"))
+        exclude(dependency("org.slf4j:slf4j-api:.*"))
+        exclude(dependency("org.slf4j:slf4j-reload4j:.*"))
+        exclude(dependency("ch.qos.reload4j:reload4j:.*"))
+    }
+
+    archiveBaseName.set(project.name)
+    archiveClassifier.set('')
+    archiveVersion.set(project.project_version)
+
+}
+
+publishing {
+    publications {
+        shadow(MavenPublication) {
+            publication -> project.shadow.component(publication)
+        }
+    }
+
+    repositories {
+        maven {
+            url = uri("https://repo.repsy.io/mvn/jadelily18/repo/")
+            credentials {
+                username = System.getenv("REPSY_USER")
+                password = System.getenv("REPSY_PASS")
+            }
+
+        }
+
+    }
+
+}
