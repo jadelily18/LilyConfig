@@ -29,7 +29,7 @@ dependencies {
 To use the library, simply instantiate the `LilyConfig` class and provide it with the desired file location and the Logger you'd like to use.
 
 ```java
-myModConfig = new LilyConfig("config/my-mod-config.json", LoggerFactory.getLogger("MyMod"));
+LilyConfig myModConfig = new LilyConfig("config/my-mod-config.json", LoggerFactory.getLogger("MyMod"));
 ```
 
 You can access the config contents itself from the `HashMap<String, Object>` `CONFIG` variable in `LilyConfig.java` and use the `saveConfig()` method when you are ready to write to the JSON file.
