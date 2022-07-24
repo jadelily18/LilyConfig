@@ -1,5 +1,6 @@
 # LilyConfig
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jadelily18/LilyConfig?color=ad4fe0&style=flat-square)](https://github.com/jadelily18/LilyConfig/releases/latest)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jadelily18/LilyConfig/build?style=flat-square)
 [![GitHub](https://img.shields.io/github/license/jadelily18/LilyConfig?color=%234690eb&style=flat-square)](https://github.com/jadelily18/LilyConfig/blob/master/LICENSE)
 [![Kofi](https://badgen.net/badge/icon/kofi?icon=kofi&label=jadelily&color=pink&style=flat-square)](https://ko-fi.com/jadelily)
 
